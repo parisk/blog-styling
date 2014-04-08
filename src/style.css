@@ -1,16 +1,19 @@
 body {
-  background: #FFFFFF url('http://assets.tumblr.com/images/x.gif') top left fixed;
-  color: #404040;
-  font: normal 1em/1.5em Georgia, serif;
+  background: #f5f5f5;
+  color: #111111;
   font-family: 'Source Sans Pro', 'Arial', 'sans-serif';
+  font-size: 1.2em
   margin: 0;
   padding: 0;
-  text-align: left; /* for ie5.5/win */
+}
+
+strong {
+  font-weight: 300;
 }
 
 a, a:active, a:visited {
   color: #2D76B9;
-  font-weight: bold;
+  font-weight: 300;
   text-decoration: none;
 }
 
@@ -39,26 +42,14 @@ blockquote {
   padding: 0 2em 0 1em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   color: #222;
   margin: 0 0 1.5em;
   padding: 0;
 }
 
-h1 {
-  font-size: 3em;
-  line-height: 1;
-  margin-bottom : 5px;
-  text-shadow : 0 1px -1px #ccc;
-}
-
 h1 a, h1 a:visited, h1 a:active {
   color: #222;
-}
-
-h1 a:hover {
-  color: #2D76B9;
-  text-decoration: none;
 }
 
 h2 {
@@ -69,16 +60,20 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 2.2em;
   text-shadow: 0 -1px 1px #fafafa;
+  font-weight: 400;
+  color: #666;
 }
 
 
-/* Content container */
+/*
+ * Content container
+ */
 #content {
-  margin: 1.5em auto 0;
   text-align: left;
-  width: 75%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 
@@ -94,31 +89,18 @@ h3 {
   display: inline;
 }
 
-
-/* Search */
-#search { margin: 0 0 0.75em; text-align: right; }
-
-
-/* Search Result Count */
-#searchresultcount { margin: 1.5em 0; text-align: center; }
-
-
-/* Individual Posts */
-.post {
-  border-top: 1px solid #999;
-
-}
-
+/*
+ * Individual posts
+ */
 .post .date {
-  border-top: 3px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
   float: left;
-  padding: .25em 1em;
+  padding: 0.4em 1em .25em;
   text-align: left;
+  text-shadow : 0 1px -1px white;
+  color: #666;
 }
 
 .post .date .month, .post .date .day, .post .date .time {
-  color: #999;
   display: block;
   font-weight: normal;
 }
@@ -197,27 +179,18 @@ h3 {
   right : 0;
   width : auto;
   bottom : 0;
-  background-color : #eee;
-  border-top : 1px solid #ccc;
   padding : 5px 10px;
   margin : 0;
 }
 
 .post {
-
   position : relative;
+  padding : 10px;
   padding-bottom : 55px!important;
   min-height : 100px;
-
-}
-
-.post-footer-ruler {
-  position: absolute;
-  border-top: 1px solid 
-    white;
-  left: 0;
-  right: 0;
-  top: 0;
+  margin-bottom : 20px;
+  font-weight: 300;
+  font-size: 1.2em;
 }
 
 .source-url {
@@ -277,8 +250,21 @@ ol.notes {
 .search_query { font-weight: bold; }
 
 /* Tags */
-.tags { display: block; }
-.tags .tag { margin-right: 0.75em; font-weight: normal; }
+.tags {
+  display: block;
+}
+
+.tags .tag {
+  margin-right: 0.75em; font-weight: normal;
+}
+
+.tags .tag:first-child {
+  margin-left: 4px;
+}
+
+.tags .tag:last-child {
+  margin-right: 0;
+}
 
 #tagpageblurb { margin: 1.5em 0; text-align: center; }
 #tagpageblurb .tag { font-weight: bold; }
@@ -292,114 +278,74 @@ ol.notes {
   background-image: url('http://www.sourcelair.com/img/blog/archive.png');
 }
 
-#search {
-
-  position : absolute;
-  bottom : 5px;
-  right : 25px;
-
-}
-
-#search .query {
-  background-image: url('http://www.sourcelair.com/img/blog/search.png');
-  height: 20px;
-}
-
-#search input , #search button {
-  border-radius: 2px;
-  border: 1px solid #999;
-  vertical-align : middle;
-  outline : none!important;
-}
-
-#search input {
-
-  padding : 1px 5px;
-
-}
-
-#search button {
-  height: 24px;
-  color : #333;
-  text-shadow : 0 -1px 1px white;
-  background-color : #dadada;
-  background-image : url(http://f.cl.ly/items/2I2f2y1B2P2z0y413A3d/search.png);
-  padding-left : 24px;
-  background-repeat : no-repeat;
-  background-position : 3px center;
-}
-
-.social {
-  position : absolute;
-  top : 107px;
-  left : 25px;
-  margin : 0;
-  padding : 0;
-}
-
-.social li {
-  list-style : none;
-}
-
-.social img {
-  border : none;
-}
-
 header {
-
   position : fixed;
   top : 0;
   left : 0;
   right : 0;
   width : auto;
-  background-color : white;
-  border-bottom : 1px solid #ccc;
-  padding : 5px 25px;
+  padding : 0 25px;
   z-index : 1;
-  height : 75px
+  height : 64px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.7);
+  background: rgba(1, 89, 118, 1) url('texture.png') top left repeat;
+}
 
+header .header-wrapper {
+  width: 60%;
+  overflow: auto;
+  position: relative;
+  margin: 0 auto;
+}
+
+h1 {
+  padding: 0;
+  float: left;
+  margin: 0;
+}
+
+h1 a.logo-container {
+  width: 33.33333%;
+  position: relative;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+h1 img {
+  max-height: 60px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.top-nav {
+  float: right;
+  margin: 0;
+}
+
+.top-nav li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 1.375em;
+  height: 60px;
+  line-height: 60px;
+}
+
+.top-nav li a {
+  font-weight: 400;
+  color: #ccc;
 }
 
 #content {
-
   margin-top : 107px;
-
-}
-
-/* Custom CSS */
-body {
-
-  font-size : 14px;
-  background-color : #fafafa;
-
-}
-
-.post {
-
-  border : 1px solid #ccc;
-  margin-bottom : 20px;
-  padding : 10px;
-  background-color : white;
-  padding-bottom : 0;
-
-}
-
-.post .date {
-
-  border : none;
-  background : #eee;
-  border : 1px solid #dadada;
-  text-shadow : 0 1px -1px white;
-  color : #ccc;
-
 }
 
 #posts .regular img {
-  border: 2px solid #ccc;
+  border: 1px solid #999;
   padding: 10px;
   border-radius: 2px;
   display: block;
-  margin: 0 auto;
+  margin: 32px auto;
 }
 
 #posts ol li {
