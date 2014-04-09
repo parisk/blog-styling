@@ -44,7 +44,7 @@ blockquote {
 
 h2, h3, h4, h5, h6 {
   color: #222;
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
   padding: 0;
 }
 
@@ -59,7 +59,7 @@ h2 {
   text-shadow : 0 1px -1px #fafafa;
 }
 
-h3 {
+.post h3 {
   font-size: 2.2em;
   text-shadow: 0 -1px 1px #fafafa;
   font-weight: 400;
