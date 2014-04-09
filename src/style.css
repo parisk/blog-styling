@@ -92,6 +92,13 @@ h3 {
 /*
  * Individual posts
  */
+.post h4 {
+  font-weight: 400;
+  color: #555;
+  font-size: 1.3em;
+  border-bottom: 1px solid #ddd;
+}
+
 .post .date {
   float: left;
   padding: 0.4em 1em .25em;
