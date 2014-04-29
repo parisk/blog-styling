@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+code {
+    white-space: pre;
+}
+
 strong {
   font-weight: 300;
 }
