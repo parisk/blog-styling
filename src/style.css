@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+code {
+    white-space: pre;
+}
+
 strong {
   font-weight: 400;
 }
@@ -43,9 +47,10 @@ blockquote {
 }
 
 h2, h3, h4, h5, h6 {
-  color: #222;
+  color: #555 !important;
   margin: 0 0 1em;
   padding: 0;
+  /* font-variant: small-caps; */
 }
 
 h1 a, h1 a:visited, h1 a:active {
@@ -62,7 +67,7 @@ h2 {
 .post h3 {
   font-size: 2.2em;
   text-shadow: 0 -1px 1px #fafafa;
-  font-weight: 400;
+  font-weight: 300;
   color: #666;
 }
 
@@ -92,19 +97,25 @@ h2 {
 /*
  * Individual posts
  */
+.post p {
+    text-align: justify;
+}
+
 .post h4 {
   font-weight: 400;
-  color: #555;
+  color: #555 !important;
   font-size: 1.3em;
   border-bottom: 1px solid #ddd;
 }
 
 .post .date {
-  float: left;
-  padding: 0.4em 1em .25em;
-  text-align: left;
+  padding: .3em .5em;
   text-shadow : 0 1px -1px white;
   color: #666;
+  position: absolute;
+  right: 100%;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .post .date .month, .post .date .day, .post .date .time {
@@ -115,11 +126,12 @@ h2 {
 .post .date .month {
   letter-spacing: .05em;
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 .post .date .day {
   font-size: 1.3em;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .post .date a, .post .date a:visited, .post .date a:active {
@@ -128,7 +140,7 @@ h2 {
 
 .post .regular, .post .quote, .post .link, .post .conversation,
 .post .photo, .post .video, .post .audio {
-  margin-left: 7em;
+  /* margin-left: 7em; */
   padding: 0;
 }
 
@@ -195,9 +207,15 @@ h2 {
   padding : 10px;
   padding-bottom : 55px!important;
   min-height : 100px;
-  margin-bottom : 20px;
+  margin-bottom: 1em;
   font-weight: 300;
   font-size: 1.2em;
+  max-width: 80%;
+  margin: 0 auto;
+  color: #303030;
+  border-left: 1px solid rgb(185, 185, 185);
+  padding-left: 1.5em;
+  margin-top: 2em;
 }
 
 .source-url {
@@ -340,6 +358,88 @@ h1 img {
 .top-nav li a {
   font-weight: 400;
   color: #ccc;
+    position: relative;
+}
+
+.top-nav li a:hover {
+  text-decoration: none;
+}
+
+.top-nav li a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    /*  
+    box-shadow: -1px -1px 0 0 rgb(214, 214, 214), 1px 1px 0 0 rgb(214, 214, 214) inset;
+    border-left:2px solid transparent;
+    border-top:2px solid transparent;
+    */
+    border-left:2px solid rgb(214, 214, 214);
+    border-top:2px solid rgb(214, 214, 214);
+    top: -100%;
+    left:-8px;
+    -webkit-transform: translate(-5px,14px);
+    -moz-transform: translate(-5px,14px);
+    -ms-transform:translate(-5px,14px);
+    -o-transform: translate(-5px,14px);
+    transform: translate(-5px,14px);
+    -webkit-transition: opacity .3s ease, -webkit-transform .3s ease;
+    -moz-transition: opacity .3s ease, -moz-transform .3s ease;
+    -ms-transition: opacity .3s ease, -ms-transform .3s ease;
+    -o-transition: opacity .3s ease, -o-transform .3s ease;
+    transition: opacity .3s ease, transform .3s ease;
+    opacity:0;
+}
+
+.top-nav li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    /*
+    box-shadow: 1px 1px 0 0 rgb(214, 214, 214), -1px -1px 0 0 rgb(214, 214, 214) inset;
+    border-right:2px solid transparent;
+    border-bottom:2px solid transparent;
+    */
+    border-right:2px solid rgb(214, 214, 214);
+    border-bottom:2px solid rgb(214, 214, 214);
+    bottom: -100%;
+    right:-8px;
+    -webkit-transform: translate(5px,-11px);
+    -moz-transform: translate(5px,-11px);
+    -ms-transform: translate(5px,-11px);
+    -o-transform: translate(5px,-11px);
+    transform: translate(5px,-11px);
+    -webkit-transition: opacity .3s ease, -webkit-transform .3s ease;
+    -moz-transition: opacity .3s ease, -moz-transform .3s ease;
+    -ms-transition: opacity .3s ease, -ms-transform .3s ease;
+    -o-transition: opacity .3s ease, -o-transform .3s ease;
+    transition: opacity .3s ease, transform .3s ease;
+    transition: opacity .3s ease, transform .3s ease;
+    opacity:0;
+}
+
+.top-nav li a:hover::before,header li a:not(.button):hover::after {
+    opacity:1;
+}
+
+.top-nav li a:hover::before {
+    -webkit-transform: translate(0px, 19px);
+    -moz-transform: translate(0px, 19px);
+    -ms-transform: translate(0px, 19px);
+    -o-transform: translate(0px, 19px);
+    transform: translate(0px, 19px);
+}
+
+.top-nav li a:hover::after {
+    -webkit-transform: translate(0px, -16px);
+    -moz-transform: translate(0px, -16px);
+    -ms-transform: translate(0px, -16px);
+    -o-transform: translate(0px, -16px);
+    transform: translate(0px, -16px);
 }
 
 #content {
